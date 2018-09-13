@@ -19,7 +19,7 @@ class Server {
                 handlers = arrayOf(
                         ServletContextHandler(ServletContextHandler.SESSIONS).apply {
                             contextPath = "/"
-                            addServlet(ServletHolder("http", HttpServlet::class.java), "/")
+                            addServlet(ServletHolder("http", HttpServlet()), "/")
                         }.also { context ->
                             WebSocketUpgradeFilter
                                     .configureContext(context)
